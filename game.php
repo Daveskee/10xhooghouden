@@ -13,11 +13,11 @@
 
 <script type="text/javascript" src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 <script>
-    Crafty.init(500,350, document.getElementById('game'));
+    Crafty.init(1500,800, document.getElementById('game'));
 
     // Playground
     Crafty.e('2D, DOM, Color')
-        .attr({x: 0, y: 0, w: 1000, h: 1000})
+        .attr({x: 0, y: 0, w: 2500, h: 2500})
         .color('#201C1D');
 
     // Ball
