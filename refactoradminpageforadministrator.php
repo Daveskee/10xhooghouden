@@ -10,6 +10,7 @@ require 'includes/config.php';
 
 if ($_GET['password'] !== "password123VanditproJect"){
     header("location: homepage.php");
+    exit;
 }
 
 if (isset ($_GET['msg'])){
