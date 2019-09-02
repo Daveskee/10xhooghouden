@@ -8,10 +8,6 @@
 
 require 'includes/config.php';
 
-if(session_id() == '' || !isset($_SESSION)) {
-    // session isn't started
-    session_start();
-}
 
 if (isset ($_GET['msg'])){
     echo $_GET['msg'];
