@@ -35,21 +35,6 @@ foreach ($players as $player){
     echo "</li>";
 }
 
-echo "</ol>"
-?>
-
-    <div> <!-- invoegen in database -->
-        <form action="includes/controller.php" method="post">
-            <input type="hidden" name="type" value="score">
-            <div class="input_name">
-                <label for="name">Please enter your name:</label>
-                <input type="text" name="name" id="name" placeholder="name">
-            </div>
-            <div class="input_score">
-                <label for="score">Please enter score:</label>
-                <input type="number" name="score" id="score" placeholder="score">
-            </div>
-            <input type="submit" value="submit">
-        </form>
-    <a href="DELETE.php">DB leegmaken</a>
-<?php require 'footer.php';?>
+echo "</ol>";
+    echo "<a href='DELETE.php'>DB leegmaken</a>";
+require 'footer.php';?>
