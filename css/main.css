@@ -314,10 +314,23 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
   }
 
 /* ==========================================================================
-   Helper classes
+   difficulties
    ========================================================================== */
+.eanoha {
 
+}
+.eanoha div{
+  
+}
+.eanoha .easy{
 
+}
+.eanoha .normal{
+
+}
+.eanoha .hard{
+
+}
 
 /*
  * Hide visually and from screen readers
