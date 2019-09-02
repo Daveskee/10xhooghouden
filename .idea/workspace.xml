@@ -10,16 +10,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="274" column="119" selection-start-line="274" selection-start-column="119" selection-end-line="274" selection-end-column="119" />
+            <state relative-caret-position="335">
+              <caret line="295" lean-forward="true" selection-start-line="295" selection-end-line="295" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infopage.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -53,18 +53,18 @@
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/DELETE.php" />
         <option value="$PROJECT_DIR$/leaderboard.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/includes/controller.php" />
         <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/game.php" />
         <option value="$PROJECT_DIR$/refactoradminpageforadministrator.php" />
         <option value="$PROJECT_DIR$/infopage.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -121,12 +121,12 @@
       <workItem from="1567001307092" duration="1067000" />
       <workItem from="1567069050669" duration="6434000" />
       <workItem from="1567406972857" duration="6774000" />
-      <workItem from="1567415807994" duration="1523000" />
+      <workItem from="1567415807994" duration="1758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23541000" />
+    <option name="totallyTimeSpent" value="23776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -235,17 +235,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="274" column="119" selection-start-line="274" selection-start-column="119" selection-end-line="274" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/infopage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="295" lean-forward="true" selection-start-line="295" selection-end-line="295" />
         </state>
       </provider>
     </entry>
