@@ -301,6 +301,8 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    margin: 20px 0 0 0;
+    bottom: 0;
   }
   footer .social_media{
     font-size: 30px;
@@ -317,19 +319,33 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
    difficulties
    ========================================================================== */
 .eanoha {
-
+  display: flex;
+  justify-content: space-around;
+}
+.eanoha a:hover{
+  opacity: 0.6;
+}
+.eanoha a{
+  width: 25%;
+  height: 200px;
 }
 .eanoha div{
-  
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .eanoha .easy{
-
+  background: radial-gradient(ellipse farthest-corner at right bottom, #6dff87 0%, #6dff87 8%, #6dff87 30%, #19ff26 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #6dff87 0%, #6dff87 8%, #6dff87 25%, #6dff87 62.5%, #c81a11 100%);
 }
 .eanoha .normal{
-
+  background: radial-gradient(ellipse farthest-corner at right bottom, #ffee66 0%, #ffee66 8%, #ffee66 30%, #ffad26 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #ffee66 0%, #ffee66 8%, #ffee66 25%, #ffad26 62.5%, #c81a11 100%);
 }
 .eanoha .hard{
-
+  background: radial-gradient(ellipse farthest-corner at right bottom, #c85344 0%, #c85344 8%, #c85344 30%, #c81a11 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c85344 25%, #c81a11 62.5%, #c81a11 100%);
 }
 
 /*

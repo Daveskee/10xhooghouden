@@ -6,10 +6,11 @@
  * Time: 12:04 PM
  */
 
+require "../header.php";
 ?>
 
 <div> <!-- invoegen in database -->
-        <form action="includes/controller.php" method="post">
+        <form action="../includes/controller.php" method="post">
             <input type="hidden" name="type" value="score">
             <div class="input_name">
                 <label for="name">Please enter your name:</label>
