@@ -37,7 +37,7 @@ require "includes/config.php";
                     <li><a href="homepage.php">Home</a></li>
                     <li><a href="infopage.php">Informatie project</a></li>
                     <li><a href="leaderboard.php">Leaderboard</a></li>
-                    <li><a href="gamepage.php">Game</a></li>
+                    <li><a href="hi.php">Game</a></li>
                 </ul>
             </nav>
         </div>
