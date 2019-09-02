@@ -9,11 +9,16 @@
 
 <?php include 'header.php'; ?>
 
-<div id="game">hi</div>
+<div id="game"></div>
 
 <script type="text/javascript" src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 <script>
-    Crafty.init(1500,800, document.getElementById('game'));
+
+    var gameWidth = 1715,
+        gameHeight = 800;
+
+    Crafty.init(gameWidth, gameHeight, document.getElementById('game'));
+
 
     // Playground
     Crafty.e('2D, DOM, Color')
