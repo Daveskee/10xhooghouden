@@ -8,6 +8,9 @@
 
 require 'includes/config.php';
 
+if ($_GET['password'] !== "password123VanditproJect"){
+    header("location: homepage.php");
+}
 
 if (isset ($_GET['msg'])){
     echo $_GET['msg'];
