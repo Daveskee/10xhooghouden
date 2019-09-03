@@ -14,7 +14,7 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
 ?>
 <!--<div class="lives_div">-->
     <button onclick="loseLife(lives)" id="lostLifeBtn">Lose a life</button>
-    <button onclick="resetLives()" id="resetLifeBtn" style="display: none;">Reset</button>
+    <button onclick="resetLives()" id="resetLifeBtn" class="hidden">Reset</button>
 <!--</div>-->
 
 <script>
@@ -56,7 +56,6 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     function loseLife() {
         // lose a life or game over
         if (lives >= 1) {
-            lives -= 1
             getHurt();
         }
         // die if life reaches 0
@@ -87,8 +86,10 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
         var x = document.createElement("IMG");
         x.setAttribute("src", "http://localhost:63342/10xhooghouden2/img/life.png");
         x.setAttribute("width", "30");
-        x.setAttribute("height", "31");
-        x.setAttribute("alt", "life");
+        x.setAttribute("height", "30");
+        x.setAttribute("alt", "life picture");
+        x.setAttribute("class", "life");
+        x.classList.add('life'+amount);
         x.setAttribute("id", "life"+amount);
         document.body.appendChild(x);
     }
@@ -96,39 +97,34 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     function getHurt() {
         // removes a life
         try {
+            lives -= 1;
             if (dif == "easy") {
                 if (lives == 2) {
-                    let life3 = document.getElementById('life3');
-                    life3.setAttribute("style", "display: none")
+                    removeLifeThree();
                 }
                 else if (lives == 1) {
-                    let life2 = document.getElementById('life2');
-                    life2.setAttribute("style", "display: none;")
+                    removeLifeTwo();
                 }
                 else if (lives == 0) {
-                    let life1 = document.getElementById('life1');
-                    life1.setAttribute("style", "display: none;")
+                    removeLifeOne();
                 }
             }
             if (dif == "normal") {
                 if (lives == 1) {
-                    let life2 = document.getElementById('life2');
-                    life2.setAttribute("style", "display: none;")
+                    removeLifeTwo();
                 }
                 else if (lives == 0) {
-                    let life1 = document.getElementById('life1');
-                    life1.setAttribute("style", "display: none;")
+                    removeLifeOne();
                 }
             }
             if (dif == "hard") {
                 if (lives == 0) {
-                    let life1 = document.getElementById('life1');
-                    life1.setAttribute("style", "display: none;")
+                    removeLifeOne();
                 }
             }
         }
         catch (e) {
-            alert("stop");
+            alert("Sorry, but there is a problem.");
         }
 
     }
@@ -136,8 +132,8 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     function giveResetBtn() {
         // when you die you can reset
 
-        lifeBtn.setAttribute("style", "display: none;");
-        resetLifeBtn.removeAttribute("style");
+        lifeBtn.classList.add('hidden');
+        resetLifeBtn.classList.remove('hidden');
     }
 
     function resetLives() {
@@ -151,22 +147,38 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
             } else if (dif == "hard") {
                 lives = 1
             }
+
             if (lives == 3) {
-                life1.removeAttribute("style");
-                life2.removeAttribute("style");
-                life3.removeAttribute("style");
+                life1.classList.remove('hidden');
+                life2.classList.remove('hidden');
+                life3.classList.remove('hidden');
             } else if (lives == 2) {
-                life1.removeAttribute("style");
-                life2.removeAttribute("style");
+                life1.classList.remove('hidden');
+                life2.classList.remove('hidden');
             } else if (lives == 1) {
-                life1.removeAttribute("style");
+                life1.classList.remove('hidden');
             }
             console.log(lives);
-            lifeBtn.removeAttribute("style");
-            resetLifeBtn.setAttribute("style", "display: none;");
+            lifeBtn.classList.remove('hidden');
+            resetLifeBtn.classList.add('hidden');
         } catch (e) {
-            alert("stop");
+            alert("Sorry, but there is a problem.");
         }
+    }
+/* functions for life removal */
+    function removeLifeThree() {
+        let life3 = document.getElementById('life3');
+        life3.classList.add('hidden');
+    }
+
+    function removeLifeTwo() {
+        let life2 = document.getElementById('life2');
+        life2.classList.add('hidden');
+    }
+
+    function removeLifeOne() {
+        let life1 = document.getElementById('life1');
+        life1.classList.add('hidden');
     }
 
 </script>
