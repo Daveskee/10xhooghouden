@@ -8,31 +8,114 @@
 
 require __DIR__ . "/../header.php";
 
-if(!isset($_GET['difficulty'])){
-    header("location: $url/test/difficulies.php");
-}
 $dif = $_GET['difficulty'];
 
-    if ( $dif == "easy"){
-        $lives = 3;
+echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;'>"
+?>
+<!--<div class="lives_div">-->
+    <button onclick="loseLife(lives)" id="lostLifeBtn">Lose a life</button>
+    <button onclick="resetLives()" id="resetLifeBtn" style="display: none;">Reset</button>
+<!--</div>-->
+
+<script>
+
+    let lives_div = document.getElementById('lives_div');
+
+    let dif = document.getElementById('difficultyinput').value;
+
+    let lifeBtn = document.getElementById('lostLifeBtn');
+    
+    let resetLifeBtn = document.getElementById('resetLifeBtn');
+
+    let lives;
+
+    setLives();
+
+    function setLives() {
+        // set the lives to the difficulty
+
+        if (dif == "easy"){
+            lives = 3;
+        }
+        else if (dif = "normal") {
+            lives = 2;
+        }
+        else if (dif = "hard") {
+            lives = 1;
+        }
+
+        makeLifes();
+
+        console.log(lives);
     }
-    else if ( $dif == "normal"){
-        $lives = 2;
+
+    function loseLife() {
+        // lose a life or game over
+        if (lives >= 1) {
+            lives -= 1
+            getHurt();
+        }
+        // die if life reaches 0
+        if (lives == 0){
+            gameOver();
+            giveResetBtn();
+        }
+        console.log(lives);
     }
-    else if ( $dif == "hard"){
-        $lives = 1;
+    
+    function gameOver() {
+        // show game over screen
+
+        alert("dead");
     }
 
-
-echo "<div class='lives_div'>";
-
-    for ($life = 0; $life < $lives; $life++){
-        echo "<img class='life life_$life' src='$url/img/life.png' alt='life.png'>";
+    function makeLifes() {
+        for (var i = 1; i <= lives; i++) {
+            setLifeImages(i);
+        }
     }
 
+    function setLifeImages(amount) {
+        var x = document.createElement("IMG");
+        x.setAttribute("src", "http://localhost:63342/10xhooghouden2/img/life.png");
+        x.setAttribute("width", "30");
+        x.setAttribute("height", "31");
+        x.setAttribute("alt", "life");
+        x.setAttribute("id", "life"+amount);
+        document.body.appendChild(x);
+    }
 
-echo "</div>";
+    function getHurt() {
+        if (lives == 2){
+            let life3 = document.getElementById('life3');
+            life3.setAttribute("style", "display: none")
+        }
+        else if (lives == 1){
+            let life2 = document.getElementById('life2');
+            life2.setAttribute("style", "display: none;")
+        }
+        else if (lives == 0){
+            let life1 = document.getElementById('life1');
+            life1.setAttribute("style", "display: none;")
+        }
+    }
 
-    echo "<input type='button' onclick='getHurt();'>";
+    function giveResetBtn() {
+        lifeBtn.setAttribute("style", "display: none;");
+        resetLifeBtn.removeAttribute("style");
+    }
 
-require __DIR__ . "/../footer.php";
+    function resetLives() {
+        life1.removeAttribute("style");
+        life2.removeAttribute("style");
+        life3.removeAttribute("style");
+        lives = 3;
+        console.log(lives);
+        lifeBtn.removeAttribute("style");
+        resetLifeBtn.setAttribute("style", "display: none;");
+    }
+
+</script>
+
+
+

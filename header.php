@@ -43,7 +43,7 @@ require __DIR__ . "/includes/config.php";
         </div>
     </div>
 </head>
-<body class="<?php if (isset($pagebody)){
+<body id="body" class="<?php if (isset($pagebody)){
     echo $pagebody;
     }
     else {
