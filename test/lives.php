@@ -50,7 +50,7 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
 
         makeLifes();
 
-        console.log(lives);
+        cL("lives: "+lives);
     }
 
     function loseLife() {
@@ -63,7 +63,7 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
             gameOver();
             giveResetBtn();
         }
-        console.log(lives);
+        cL("lives: "+lives);
     }
     
     function gameOver() {
@@ -100,26 +100,26 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
             lives -= 1;
             if (dif == "easy") {
                 if (lives == 2) {
-                    removeLifeThree();
+                    classListAddingHidden(life3);
                 }
                 else if (lives == 1) {
-                    removeLifeTwo();
+                    classListAddingHidden(life2);
                 }
                 else if (lives == 0) {
-                    removeLifeOne();
+                    classListAddingHidden(life1);
                 }
             }
             if (dif == "normal") {
                 if (lives == 1) {
-                    removeLifeTwo();
+                    classListAddingHidden(life2);
                 }
                 else if (lives == 0) {
-                    removeLifeOne();
+                    classListAddingHidden(life1);
                 }
             }
             if (dif == "hard") {
                 if (lives == 0) {
-                    removeLifeOne();
+                    classListAddingHidden(life1);
                 }
             }
         }
@@ -132,7 +132,7 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     function giveResetBtn() {
         // when you die you can reset
 
-        lifeBtn.classList.add('hidden');
+        classListAddingHidden(lifeBtn);
         resetLifeBtn.classList.remove('hidden');
     }
 
@@ -149,36 +149,35 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
             }
 
             if (lives == 3) {
-                life1.classList.remove('hidden');
-                life2.classList.remove('hidden');
-                life3.classList.remove('hidden');
+                classListRemoveHidden(life1);
+                classListRemoveHidden(life2);
+                classListRemoveHidden(life3);
             } else if (lives == 2) {
-                life1.classList.remove('hidden');
-                life2.classList.remove('hidden');
+                classListRemoveHidden(life1);
+                classListRemoveHidden(life2);
             } else if (lives == 1) {
-                life1.classList.remove('hidden');
+                classListRemoveHidden(life1);
             }
-            console.log(lives);
-            lifeBtn.classList.remove('hidden');
-            resetLifeBtn.classList.add('hidden');
+            cL("Reset");
+            cL("lives: "+lives);
+            classListRemoveHidden(lifeBtn);
+            classListAddingHidden(resetLifeBtn);
         } catch (e) {
             alert("Sorry, but there is a problem.");
         }
     }
-/* functions for life removal */
-    function removeLifeThree() {
-        let life3 = document.getElementById('life3');
-        life3.classList.add('hidden');
+/* functions for adding and removing hidden class */
+
+    function classListRemoveHidden(physical) {
+        physical.classList.remove('hidden');
     }
 
-    function removeLifeTwo() {
-        let life2 = document.getElementById('life2');
-        life2.classList.add('hidden');
+    function classListAddingHidden(physical) {
+        physical.classList.add('hidden');
     }
 
-    function removeLifeOne() {
-        let life1 = document.getElementById('life1');
-        life1.classList.add('hidden');
+    function cL(variable) {
+        console.log(variable);
     }
 
 </script>
