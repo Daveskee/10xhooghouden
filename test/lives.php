@@ -130,10 +130,10 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     }
 
     function giveResetBtn() {
-        // when you die you can reset
+        // reset testing
 
         classListAddingHidden(lifeBtn);
-        resetLifeBtn.classList.remove('hidden');
+        classListRemoveHidden(resetLifeBtn);
     }
 
     function resetLives() {
