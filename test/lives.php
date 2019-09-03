@@ -70,12 +70,16 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     }
 
     function makeLifes() {
+        // set the images for lives
+
         for (var i = 1; i <= lives; i++) {
             setLifeImages(i);
         }
     }
 
     function setLifeImages(amount) {
+        // make the images for lives
+
         var x = document.createElement("IMG");
         x.setAttribute("src", "http://localhost:63342/10xhooghouden2/img/life.png");
         x.setAttribute("width", "30");
@@ -86,6 +90,8 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     }
 
     function getHurt() {
+        // removes a life
+
         if (lives == 2){
             let life3 = document.getElementById('life3');
             life3.setAttribute("style", "display: none")
@@ -101,11 +107,15 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     }
 
     function giveResetBtn() {
+        // when you die you can reset
+
         lifeBtn.setAttribute("style", "display: none;");
         resetLifeBtn.removeAttribute("style");
     }
 
     function resetLives() {
+        // resets the lives
+
         life1.removeAttribute("style");
         life2.removeAttribute("style");
         life3.removeAttribute("style");
