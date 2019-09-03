@@ -347,6 +347,16 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
   background: radial-gradient(ellipse farthest-corner at right bottom, #c85344 0%, #c85344 8%, #c85344 30%, #c81a11 40%, transparent 80%),
   radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c85344 25%, #c81a11 62.5%, #c81a11 100%);
 }
+/* ==========================================================================
+   lives
+   ========================================================================== */
+.lives_div{
+  text-align: center;
+}
+.life {
+  width: 30px
+}
+
 
 /*
  * Hide visually and from screen readers
