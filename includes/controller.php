@@ -10,7 +10,7 @@ if ( $_SERVER['REQUEST_METHOD'] != 'POST'){
     header('location: homepage.php');
     exit;
 }
-require 'config.php';
+require __DIR__ . '/config.php';
 
 if ( $_POST['type'] === 'score' ) {
 

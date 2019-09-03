@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php include 'header.php'; ?>
+<?php require __DIR__ . '/header.php'; ?>
 
 
 <script type="text/javascript" src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
@@ -26,6 +26,6 @@
 </script>
 
 
-<?php include 'footer.php'; ?>
+<?php require __DIR__ . '/footer.php'; ?>
 </body>
 </html>

@@ -6,7 +6,7 @@
  * Time: 12:04 PM
  */
 
-require "../header.php";
+require __DIR__ . "/../header.php";
 ?>
 
 <div> <!-- invoegen in database -->
@@ -22,3 +22,5 @@ require "../header.php";
             </div>
             <input type="submit" value="submit">
         </form>
+
+    <?php require __DIR__ . "/../footer.php";

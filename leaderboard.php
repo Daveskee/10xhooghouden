@@ -8,7 +8,7 @@
 
 
 
-require "header.php";
+require __DIR__ . "/header.php";
 if (isset($_GET['id'])){
     $id = $_GET['id'];
 }
@@ -29,7 +29,7 @@ if (isset($_GET['id'])){
         echo "Hello $name, you got a score of $score";
     }
     else {
-        echo "<a href='gamepage.php'>Wanna play?</a>";
+        echo "<a href='$url/game.php'>Wanna play?</a>";
     }
     ?>
 </div>
@@ -50,4 +50,4 @@ foreach ($players as $player){
 }
 
 echo "</ol>";
-require 'footer.php';?>
+require __DIR__ . '/footer.php';?>

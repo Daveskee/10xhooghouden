@@ -6,8 +6,10 @@
  * Time: 12:42 PM
  */
 
-require "../header.php";
+require __DIR__ . "../header.php";
 
 if(!isset($_GET['difficulty'])){
 
 }
+
+require __DIR__ . "/../footer.php";
