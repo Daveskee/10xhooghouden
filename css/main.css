@@ -353,8 +353,11 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
 .lives_div{
   text-align: center;
 }
-.life {
-  width: 30px
+.lives_div .game_over{
+  text-align: center;
+}
+.life{
+  margin-left: 5px;
 }
 
 
