@@ -18,7 +18,7 @@ require __DIR__ . "/../header.php";
             </div>
             <div class="input_score">
                 <label for="score">Please enter score:</label>
-                <input type="number" name="score" id="score" placeholder="score">
+                <input type="number" name="score" id="score" placeholder="score" value="<?= $score ?>">
             </div>
             <input type="submit" value="submit">
         </form>
