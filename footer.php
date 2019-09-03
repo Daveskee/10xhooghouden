@@ -11,12 +11,6 @@
         &copy; Projectgroep 10xHooghouden
     </div>
     <div class="social_media">
-        <a href="#" target="">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#" target="">
-            <i class="fab fa-instagram"></i>
-        </a>
     </div>
 </footer>
 </body>

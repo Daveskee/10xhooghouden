@@ -5,19 +5,8 @@
  * Date: 8/27/2019
  * Time: 4:01 PM
  */
-?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <title>Home - 10xhooghouden</title>
-    <?php include 'header.php'; ?>
+include 'header.php'; ?>
 
     <div class="container">
         <div class="eyecatcher">
@@ -38,5 +27,3 @@
     </div>
 
     <?php include 'footer.php'; ?>
-</head>
-<body>

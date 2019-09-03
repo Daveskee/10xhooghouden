@@ -9,5 +9,5 @@
 require "../header.php";
 
 if(!isset($_GET['difficulty'])){
-    
+
 }

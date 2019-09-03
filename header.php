@@ -43,4 +43,4 @@ require "includes/config.php";
         </div>
     </div>
 </head>
-<body>
+<body class="<?=$pagebody?>">

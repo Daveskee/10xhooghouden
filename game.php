@@ -9,7 +9,6 @@
 
 <?php include 'header.php'; ?>
 
-<div id="game">hi</div>
 
 <script type="text/javascript" src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 <script>
