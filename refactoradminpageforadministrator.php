@@ -6,7 +6,7 @@
  * Time: 4:34 PM
  */
 
-require 'includes/config.php';
+require __DIR__ . '/includes/config.php';
 
 if ($_GET['password'] !== "password123VanditproJect"){
     header("location: homepage.php");
@@ -36,5 +36,5 @@ foreach ($players as $player){
 }
 
 echo "</ol>";
-    echo "<a href='DELETE.php'>DB leegmaken</a>";
-require 'footer.php';?>
+    echo "<a href='<$url/DELETE.php'>DB leegmaken</a>";
+require __DIR__ . '/footer.php';?>

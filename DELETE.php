@@ -8,7 +8,7 @@
 
 
 
-require "header.php";
+require __DIR__ . "/header.php";
 
 ?>
 <form action="includes/controller.php" method="post" style="text-align: center">
@@ -17,4 +17,4 @@ require "header.php";
 </form>
 <button class="cancelBtn" style="width: 100px; height: 100px; margin: 0 auto;">Cancel</button>
 
-<?php require "footer.php"?>
+<?php require __DIR__ . "/footer.php"?>

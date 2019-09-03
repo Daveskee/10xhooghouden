@@ -6,7 +6,7 @@
  * Time: 4:01 PM
  */
 
-include 'header.php'; ?>
+require __DIR__ . '/header.php'; ?>
 
     <div class="container">
         <div class="eyecatcher">
@@ -26,4 +26,4 @@ include 'header.php'; ?>
         </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+    <?php require __DIR__ . '/footer.php'; ?>

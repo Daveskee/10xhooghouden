@@ -6,7 +6,7 @@
  * Time: 2:44 PM
  */
 
-require "includes/config.php";
+require __DIR__ . "/includes/config.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,8 +15,8 @@ require "includes/config.php";
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="<?= $url ?>/css/main.css">
+    <link rel="stylesheet" href="<?= $url ?>/css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title><?php
         if(isset($pagetitle)){
@@ -34,13 +34,18 @@ require "includes/config.php";
             </div>
             <nav class="headnav">
                 <ul class="navbar row-spaced">
-                    <li><a href="homepage.php">Home</a></li>
-                    <li><a href="infopage.php">Informatie project</a></li>
-                    <li><a href="leaderboard.php">Leaderboard</a></li>
-                    <li><a href="test/difficulties.php">Game</a></li>
+                    <li><a href="<?= $url ?>homepage.php">Home</a></li>
+                    <li><a href="<?= $url ?>infopage.php">Informatie project</a></li>
+                    <li><a href="<?= $url ?>leaderboard.php">Leaderboard</a></li>
+                    <li><a href="<?= $url ?>test/difficulties.php">Game</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 </head>
-<body class="<?=$pagebody?>">
+<body class="<?php if (isset($pagebody)){
+    echo $pagebody;
+    }
+    else {
+        echo "body";
+    }?>">
