@@ -28,6 +28,7 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
     let resetLifeBtn = document.getElementById('resetLifeBtn');
 
     let lives;
+    let maxLives;
 
     setLives();
 
@@ -36,12 +37,15 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
 
         if (dif == "easy"){
             lives = 3;
+            maxLives = 3
         }
-        else if (dif = "normal") {
+        else if (dif == "normal") {
             lives = 2;
+            maxLives = 2
         }
-        else if (dif = "hard") {
+        else if (dif == "hard") {
             lives = 1;
+            maxLives = 1
         }
 
         makeLifes();
@@ -91,19 +95,42 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
 
     function getHurt() {
         // removes a life
+        try {
+            if (dif == "easy") {
+                if (lives == 2) {
+                    let life3 = document.getElementById('life3');
+                    life3.setAttribute("style", "display: none")
+                }
+                else if (lives == 1) {
+                    let life2 = document.getElementById('life2');
+                    life2.setAttribute("style", "display: none;")
+                }
+                else if (lives == 0) {
+                    let life1 = document.getElementById('life1');
+                    life1.setAttribute("style", "display: none;")
+                }
+            }
+            if (dif == "normal") {
+                if (lives == 1) {
+                    let life2 = document.getElementById('life2');
+                    life2.setAttribute("style", "display: none;")
+                }
+                else if (lives == 0) {
+                    let life1 = document.getElementById('life1');
+                    life1.setAttribute("style", "display: none;")
+                }
+            }
+            if (dif == "hard") {
+                if (lives == 0) {
+                    let life1 = document.getElementById('life1');
+                    life1.setAttribute("style", "display: none;")
+                }
+            }
+        }
+        catch (e) {
+            alert("stop");
+        }
 
-        if (lives == 2){
-            let life3 = document.getElementById('life3');
-            life3.setAttribute("style", "display: none")
-        }
-        else if (lives == 1){
-            let life2 = document.getElementById('life2');
-            life2.setAttribute("style", "display: none;")
-        }
-        else if (lives == 0){
-            let life1 = document.getElementById('life1');
-            life1.setAttribute("style", "display: none;")
-        }
     }
 
     function giveResetBtn() {
@@ -115,14 +142,31 @@ echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;
 
     function resetLives() {
         // resets the lives
+        try {
 
-        life1.removeAttribute("style");
-        life2.removeAttribute("style");
-        life3.removeAttribute("style");
-        lives = 3;
-        console.log(lives);
-        lifeBtn.removeAttribute("style");
-        resetLifeBtn.setAttribute("style", "display: none;");
+            if (dif == "easy") {
+                lives = 3;
+            } else if (dif == "normal") {
+                lives = 2;
+            } else if (dif == "hard") {
+                lives = 1
+            }
+            if (lives == 3) {
+                life1.removeAttribute("style");
+                life2.removeAttribute("style");
+                life3.removeAttribute("style");
+            } else if (lives == 2) {
+                life1.removeAttribute("style");
+                life2.removeAttribute("style");
+            } else if (lives == 1) {
+                life1.removeAttribute("style");
+            }
+            console.log(lives);
+            lifeBtn.removeAttribute("style");
+            resetLifeBtn.setAttribute("style", "display: none;");
+        } catch (e) {
+            alert("stop");
+        }
     }
 
 </script>
