@@ -29,13 +29,13 @@ if (isset($_GET['id'])){
         echo "Hello $name, you got a score of $score";
     }
     else {
-        echo "<a href='$url/game.php'>Wanna play?</a>";
+        echo "<a href='$url/test/difficulties.php'>Wanna play?</a>";
     }
     ?>
 </div>
 <?php
 
-$sql = "SELECT name, score FROM scores ORDER BY score DESC";
+$sql = "SELECT name, score FROM scores ORDER BY score DESC LIMIT 10";
 $query = $db->query($sql);
 $players =$query->fetchAll(PDO::FETCH_ASSOC);
 echo "<ol class='leaderboardList'>";
@@ -50,4 +50,13 @@ foreach ($players as $player){
 }
 
 echo "</ol>";
+
+?>
+
+<script type="text/javascript">
+
+</script>
+
+
+<?php
 require __DIR__ . '/footer.php';?>
