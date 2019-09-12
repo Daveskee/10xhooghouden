@@ -8,7 +8,12 @@
 
 require __DIR__ . "/../header.php";
 
-$dif = $_GET['difficulty'];
+if  (isset($_GET['difficulty'])) {
+    $dif = $_GET['difficulty'];
+}
+else {
+    header('location: difficulties.php');
+}
 
 echo "<input id='difficultyinput' type='text' value='$dif' style='display: none;'>"
 ?>
