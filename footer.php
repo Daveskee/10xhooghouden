@@ -6,6 +6,8 @@
  * Time: 2:44 PM
  */
 ?>
+
+</body>
 <footer>
     <div class="copy">
         &copy; Projectgroep 10xHooghouden
@@ -13,5 +15,4 @@
     <div class="social_media">
     </div>
 </footer>
-</body>
 </html>

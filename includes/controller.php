@@ -24,9 +24,9 @@ if ( $_POST['type'] === 'score' ) {
         ':score' => $score
     ]);
 
+    $last_id = $db->lastInsertId();
 
-    $msg = "Score is succesvol ingevoerd!";
-    header("location: ../refactoradminpageforadministrator.php?msg=$msg");
+    header("location: ../leaderboard.php?last_id=$last_id");
     exit;
 }
 

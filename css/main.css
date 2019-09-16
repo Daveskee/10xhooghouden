@@ -273,15 +273,26 @@ a {
   content: counter(li);
   display: inline-block;
 }
+
+/* ==========================================================================
+    your score
+   ========================================================================== */
+
 .yourScore{
 background: radial-gradient(ellipse farthest-corner at right bottom, #c85344 0%, #c85344 8%, #c85344 30%, #c81a11 40%, transparent 80%),
 radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c85344 25%, #c81a11 62.5%, #c81a11 100%);
   padding: 10px;
-  margin: 0 0 20px 0;
   color: #FFF;
   text-align: center;
   font-size: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
+.op7 {
+  opacity: 0.7;
+}
+
 /* ==========================================================================
     gradient
    ========================================================================== */
@@ -343,6 +354,9 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
   footer .social_media a:hover{
     color: #c81a11;
   }
+  .leaderboard footer{
+    margin-bottom: 45px;
+  }
 
 /* ==========================================================================
    difficulties
@@ -387,6 +401,31 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
 }
 .life{
   margin-left: 5px;
+}
+
+/* ==========================================================================
+   leaderboard entry
+   ========================================================================== */
+
+.leaderBoardEntry form{
+  max-width: 250px;
+  margin: 0 auto;
+  text-align: center;
+  background: #00ff00;
+  padding: 30px;
+}
+.leaderBoardEntry .scorelabel{
+  font-size: 30px;
+}
+.leaderBoardEntry .form-group{
+  margin-bottom: 20px;
+}
+.leaderBoardEntry .namelabel{
+  font-size: 30px;
+}
+.leaderBoardEntry .score input{
+  width: 40px;
+  font-size: 25px;
 }
 
 

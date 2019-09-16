@@ -6,35 +6,13 @@
  * Time: 4:35 PM
  */
 
-
+$pagebody = "leaderboard";
 
 require __DIR__ . "/header.php";
-if (isset($_GET['id'])){
-    $id = $_GET['id'];
+$viaGame = false;
+if (isset($_GET['last_id'])) {
+    $id = $_GET['last_id'];
 }
-?>
-<div class="yourScore">
-    <?php
-    if (isset($id)){
-        $sql = "SELECT * FROM scores WHERE id = :id";
-        $prepare = $db->prepare($sql);
-        $prepare->execute([
-            'id' => $id
-        ]);
-        $player = $prepare->fetch(PDO::FETCH_ASSOC);
-
-        $name = $player['name'];
-        $score = $player['score'];
-
-        echo "Hello $name, you got a score of $score";
-    }
-    else {
-        echo "<a href='$url/test/difficulties.php'>Wanna play?</a>";
-    }
-    ?>
-</div>
-<?php
-
 $sql = "SELECT name, score FROM scores ORDER BY score DESC LIMIT 10";
 $query = $db->query($sql);
 $players =$query->fetchAll(PDO::FETCH_ASSOC);
@@ -52,6 +30,25 @@ foreach ($players as $player){
 echo "</ol>";
 
 ?>
+<div class="yourScore">
+    <?php
+    if (isset($id)) {
+            $sql = "SELECT * FROM scores WHERE id = :id";
+            $prepare = $db->prepare($sql);
+            $prepare->execute([
+                'id' => $id
+            ]);
+            $player = $prepare->fetch(PDO::FETCH_ASSOC);
+
+            $name = $player['name'];
+            $score = $player['score'];
+
+            echo "Hello $name, you got a score of $score";
+        } else {
+            echo "<a href='$url/test/difficulties.php' id='playbtn' class=''>Wanna play?</a>";
+    }
+    ?>
+</div>
 
 <script type="text/javascript">
 

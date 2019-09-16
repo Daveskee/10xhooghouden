@@ -5,6 +5,9 @@
  * Date: 9/16/2019
  * Time: 8:55 AM
  */
+
+require __DIR__ . "/header.php";
+
 if  (isset($_GET['difficulty'])) {
     $dif = $_GET['difficulty'];
 }
@@ -132,6 +135,7 @@ else {
 
                 if (lives <= 0){
                     Crafty.stop();
+                    window.location = '<?=$url?>leaderboardentry.php?score='+score;
                 }
             })
             .css({
