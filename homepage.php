@@ -13,8 +13,14 @@ require __DIR__ . '/header.php'; ?>
             <div class="eyecatcher-background">
                 <div class="leftside-eyecatcher">
                     <div class="position-fix-eyecatcher">
-                        <h2>Info project</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at consectetur, cumque doloremque error exercitationem facere laborum minima molestias numquam odit perspiciatis quaerat qui quis rerum sint, velit. Provident, voluptate.</p>
+                        <h2>Informatie project</h2>
+                        <p>
+                            Hallo! Welkom hier! Wij zijn studenten van het Radius College en wij zijn hier met een doel.
+                            Dit doel is om een leuk spel te creëren voor jullie! Wij zitten momenteel in het 2e jaar en hebben de opdracht gekregen om een eigen project te ontwikkelen.
+                            Met wat denken kwamen we op de game die op de site staat!
+                            We van school het domein www.10xhooghouden.nl gekregen en zijn hier mee aan de slag gegaan.
+                            Als u hulp nodig heeft met iets, vraag gerust aan ons via mondeling of deze link hieronder.
+                        </p>
                     </div>
                 </div>
             </div>
