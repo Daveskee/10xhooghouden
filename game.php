@@ -150,7 +150,33 @@ else {
                 w: screenWidth,
                 h: 10
             })
-            .color("#0F0")
+            // .color("#0F0")
+        let line1 = Crafty.e('Line1, 2D, Canvas, Color')
+            .attr({
+                x: 0,
+                y: screenHeight - 100,
+                w: 300,
+                h: 10
+            })
+            .color('#CDFF0F')
+
+        let line2 = Crafty.e('Line2, 2D, Canvas, Color')
+            .attr({
+                x: 300,
+                y: screenHeight - 100,
+                w: 300,
+                h: 10
+            })
+            .color('#FF00FF')
+
+        let line3 = Crafty.e('Line3, 2D, Canvas, Color')
+            .attr({
+                x: 600,
+                y: screenHeight - 100,
+                w: 300,
+                h: 10
+            })
+            .color('#FFFF00')
 
         var Ball = Crafty.e('Ball, 2D, DOM, Color, Gravity, Solid, Collision, Mouse, Jumper, Keyboard')
             .attr({
@@ -161,7 +187,7 @@ else {
             })
             .gravity()
             .gravityConst(300)
-            .jumper(300, ['SPACE'])
+            .jumper(300, ['SPACE', 'A', 'S', 'D'])
             .color("#F00")
             .css({
                 'border-radius': '20px'
@@ -179,10 +205,44 @@ else {
                         this.x += random;
                     }
                 }
+                if (this.hit('Line1')) {
+                    if ( Crafty.s('Keyboard').isKeyDown(65) ) {
+                        this.canJump = true;
+                        xVelocity = Math.floor(Math.random() * 20) - 10;
+                        score++;
+                        console.log(score);
+                        this.x += random;
+                    }
+                }
+
+                if (this.hit('Line2')) {
+                    if ( Crafty.s('Keyboard').isKeyDown(83) ) {
+                        this.canJump = true;
+                        xVelocity = Math.floor(Math.random() * 20) - 10;
+                        score++;
+                        console.log(score);
+                        this.x += random;
+                    }
+                }
+                if (this.hit('Line3')) {
+                    if ( Crafty.s('Keyboard').isKeyDown(68) ) {
+                        this.canJump = true;
+                        xVelocity = Math.floor(Math.random() * 20) - 10;
+                        score++
+                        console.log(score);
+                    }
+                }
             })
             .bind("EnterFrame", function () {
 
                 this.x += xVelocity;
+                if (this.x < 300) {
+                    this.color('#CDFF0F');
+                } else if ( this.x >= 300 && this.x < 600 ) {
+                    this.color('#FF00FF')
+                } else {
+                    this.color('#FFFF00')
+                }
 
                 this.onHit('Floor', function () {
                     this.y = 0;
