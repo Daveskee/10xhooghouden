@@ -37,7 +37,7 @@ require __DIR__ . "/includes/config.php";
                     <li><a href="<?= $url ?>homepage.php">Home</a></li>
                     <li><a href="<?= $url ?>infopage.php">Informatie project</a></li>
                     <li><a href="<?= $url ?>leaderboard.php">Leaderboard</a></li>
-                    <li><a href="<?= $url ?>test/difficulties.php">Game</a></li>
+                    <li><a href="<?= $url ?>difficulties.php">Game</a></li>
                 </ul>
             </nav>
         </div>
