@@ -62,7 +62,7 @@ echo "</ol>";
                 echo "Great job $name, you scored $score points and placed $position <i class='fas fa-thumbs-up'></i>";
             }
             else {
-                echo "Hello $name, you got a score of $score and placed $position of $allplayers";
+                echo "Hello $name, you got a score of $score and placed $position of $allplayers players";
             }
         } else {
             echo "<a href='$url/test/difficulties.php' id='playbtn' class=''>Wanna play?</a>";
