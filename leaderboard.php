@@ -9,7 +9,6 @@
 $pagebody = "leaderboard";
 
 require __DIR__ . "/header.php";
-$viaGame = false;
 if (isset($_GET['last_id'])) {
     $id = $_GET['last_id'];
 }
@@ -24,13 +23,14 @@ $players = $query->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<ol class='leaderboardList'>";
 $i = 0;
-
-foreach ($players_ as $player_) {
-    $i++;
-    if ($player_['id'] == $id) {
-        $position = $i;
+if  (isset($id)) {
+    foreach ($players_ as $player_) {
+        $i++;
+        if ($player_['id'] == $id) {
+            $position = $i;
+        }
+        $allplayers = $i;
     }
-    $allplayers = $i;
 }
 foreach ($players as $player){
 
@@ -62,10 +62,10 @@ echo "</ol>";
                 echo "Great job $name, you scored $score points and placed $position <i class='fas fa-thumbs-up'></i>";
             }
             else {
-                echo "Hello $name, you got a score of $score and placed $position of $allplayers players";
+                echo "<p class='agm'>Hello <span class='agmName'>$name</span>, you got a score of $score and placed $position out of $allplayers players</p>";
             }
         } else {
-            echo "<a href='$url/test/difficulties.php' id='playbtn' class=''>Wanna play?</a>";
+            echo "<a href='$url/difficulties.php' id='playbtn' class=''>Wanna play?</a>";
     }
     ?>
 </div>

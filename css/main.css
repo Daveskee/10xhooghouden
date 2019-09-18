@@ -295,6 +295,12 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
 .fa-thumbs-up{
   color: rgb(67, 136, 255);
 }
+.agm{
+  font-size: 23px;
+}
+.agmName{
+  text-decoration: underline;
+}
 
 /* ==========================================================================
     gradient

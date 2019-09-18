@@ -45,15 +45,11 @@ else {
     var screenWidth = 900;
     var screenHeight = 500;
 
-    // var query = window.location.search.substring(1);
-    //
-    // console.log(query);
 
-    var hitCounter = 0;
-    var jumpSpeed = 400;
+
     var xVelocity = 0;
-    var yVelocity = 0
-    var rotation = 0;
+    let jumpHeight = 300;
+    let grav = 250;
     var score = 0;
 
     let lifeImg = "<img style='width: 30px' src='img/life.png'>"
@@ -95,7 +91,7 @@ else {
         let invisline = Crafty.e('invisline, 2D, Canvas, Collision, Solid')
             .attr({
                 x: 0,
-                y: 41,
+                y: 51,
                 w: screenWidth,
                 h: 2
             });
@@ -181,13 +177,13 @@ else {
         var Ball = Crafty.e('Ball, 2D, DOM, Color, Gravity, Solid, Collision, Mouse, Jumper, Keyboard')
             .attr({
                 x: 100,
-                y: 0,
+                y: 10,
                 w: 40,
                 h: 40
             })
             .gravity()
-            .gravityConst(300)
-            .jumper(300, ['SPACE', 'A', 'S', 'D'])
+            .gravityConst(grav)
+            .jumper(jumpHeight, ['A', 'S', 'D'])
             .color("#F00")
             .css({
                 'border-radius': '20px'
@@ -210,7 +206,8 @@ else {
                         this.canJump = true;
                         xVelocity = Math.floor(Math.random() * 20) - 10;
                         score++;
-                        console.log(score);
+                        grav += 20;
+                        jumpHeight += 20;
                         this.x += random;
                     }
                 }
@@ -220,7 +217,8 @@ else {
                         this.canJump = true;
                         xVelocity = Math.floor(Math.random() * 20) - 10;
                         score++;
-                        console.log(score);
+                        grav += 20;
+                        jumpHeight += 20;
                         this.x += random;
                     }
                 }
@@ -229,11 +227,16 @@ else {
                         this.canJump = true;
                         xVelocity = Math.floor(Math.random() * 20) - 10;
                         score++
-                        console.log(score);
+                        grav += 20;
+                        jumpHeight += 20;
+                        this.x += random;
                     }
                 }
             })
             .bind("EnterFrame", function () {
+
+                this.gravityConst(grav);
+                this.jumper(jumpHeight, ['A','S','D']);
 
                 this.x += xVelocity;
                 if (this.x < 300) {
@@ -245,10 +248,12 @@ else {
                 }
 
                 this.onHit('Floor', function () {
-                    this.y = 0;
+                    this.y = 10;
                     this.x = 100;
                     xVelocity = 0;
                     this.gravity('invisline');
+                    grav = 250;
+                    jumpHeight = 300;
                     setTimeout(function () {
                         Ball.gravity('Floor')
                     }, 1000);
@@ -309,6 +314,15 @@ else {
             })
             .color('#000')
 
+        Crafty.e('Roof, 2D, DOM, Color, Solid')
+            .attr({
+                x:0,
+                y:0,
+                w: screenWidth,
+                h: 10
+            })
+            .color('#000');
+
         Crafty.e('Dot, 2D, DOM, Color, Collision')
             .attr({
                 x:(100),
@@ -323,12 +337,6 @@ else {
     });
 
     Crafty.enterScene("Game");
-
-    function addPoint() {
-        points++;
-        points_counter.innerHTML = points;
-    }
-
 
 </script>
 </body>
