@@ -23,7 +23,7 @@ else {
     <title>Title</title>
 </head>
 <body>
-<div id="game"></div>
+<div id="game" class="game"></div>
 <div class="points">Points: <span id="points_counter"></span></div>
 <div class="lives">Lives: <span id="life_counter"> <?php if (isset($dif)){echo $dif;} ?></span></div>
 <script type="text/javascript" src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
@@ -57,6 +57,7 @@ else {
 
     let random = 0;
 
+
     Crafty.init(screenWidth,screenHeight, document.getElementById('game'));
 
     Crafty.defineScene("mainMenu", function () {
@@ -79,6 +80,11 @@ else {
 
     Crafty.defineScene("Game", function () {
 
+
+        Crafty.sprite("img/soccer_field2.jpg", {Soccerfield:[0,0,10000,10000]});
+
+        let background = Crafty.e('Background, 2D, Canvas, Soccerfield')
+
         let life = Crafty.e('Life, 2D, DOM')
             .attr({
                 w:30,
@@ -98,17 +104,19 @@ else {
 
         let scoreboard = Crafty.e('ScoreBoard, 2D, DOM, Text')
             .attr({
-                x: screenWidth - 100,
+                x: screenWidth - 110,
                 y: 20,
                 w: 100,
-                h: 20
+                h: 60
             })
             .bind('EnterFrame', function() {
                 this.text('Your score: ' + score);
             })
             .css({
                 'font-family': 'cursive',
-                'font-size': '20px'
+                'font-size': '20px',
+                'background': 'rgba(255,255,255,0.5',
+                'padding-left': '10px'
             });
 
         let livesboard = Crafty.e('LivesBoard, 2D, DOM, Text')
@@ -131,7 +139,15 @@ else {
 
                 if (lives <= 0){
                     Crafty.stop();
-                    window.location = '<?=$url?>leaderboardentry.php?score='+score;
+                    let zero = 0;
+                    document.cookie = 'score='+zero;
+                    document.cookie = 'game_played=true'
+                    console.log("i'm here");
+                    document.cookie = "score="+score;
+
+                    console.log(document.cookie);
+
+                    window.location = '<?=$url?>leaderboardentry.php';
                 }
             })
             .css({
@@ -147,7 +163,7 @@ else {
                 h: 10
             })
             // .color("#0F0")
-        let line1 = Crafty.e('Line1, 2D, Canvas, Color')
+        let line1 = Crafty.e('Line1, 2D, DOM, Color')
             .attr({
                 x: 0,
                 y: screenHeight - 100,
@@ -156,7 +172,7 @@ else {
             })
             .color('#CDFF0F')
 
-        let line2 = Crafty.e('Line2, 2D, Canvas, Color')
+        let line2 = Crafty.e('Line2, 2D, DOM, Color')
             .attr({
                 x: 300,
                 y: screenHeight - 100,
@@ -165,7 +181,7 @@ else {
             })
             .color('#FF00FF')
 
-        let line3 = Crafty.e('Line3, 2D, Canvas, Color')
+        let line3 = Crafty.e('Line3, 2D, DOM, Color')
             .attr({
                 x: 600,
                 y: screenHeight - 100,
@@ -174,7 +190,12 @@ else {
             })
             .color('#FFFF00')
 
-        var Ball = Crafty.e('Ball, 2D, DOM, Color, Gravity, Solid, Collision, Mouse, Jumper, Keyboard')
+
+        var thing = 400;
+
+        Crafty.sprite("img/ball.jpg", {Futball:[0,0,thing,thing]});
+
+        var Ball = Crafty.e('Ball, 2D, DOM, Color, Gravity, Solid, Collision, Mouse, Jumper, Keyboard, Futball')
             .attr({
                 x: 100,
                 y: 10,

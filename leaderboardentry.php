@@ -10,12 +10,7 @@ $pagebody = "leaderBoardEntry";
 
 require __DIR__ . "/header.php";
 
-if (isset($_GET['score'])){
-    $score = $_GET['score'];
-}
-else {
-    header("location: $url"."difficulties.php");
-}
+
 
 ?>
 <form action="<?=$url?>includes/controller.php" class="leaderboardenter" method="post">
@@ -31,15 +26,50 @@ else {
     </div>
 <div class="form-group score">
     <div class="label">
-        <label class="scorelabel" for="score">Your score is</label>
+        <label class="scorelabel" for="scoreInput">Your score is</label>
     </div>
     <div class="input">
-        <input type="number" id="score" value="<?=$score?>" disabled>
-        <input type="hidden" id="score" name="score" value="<?=$score?>">
+        <input type="number" id="scoreInput" value="" disabled>
+        <input type="hidden" id="score" name="score" value="">
     </div>
 </div>
         <input type="submit" value="UwU">
 </form>
+
+    <script type="text/javascript">
+
+        var gamePlayed = document.cookie.replace(/(?:(?:^|.*;\s*)game_played\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+        console.log(gamePlayed);
+
+        if (gamePlayed == "false"){
+            if (history.back() == '<?=$url?>game.php'){
+                window.location.href = "<?=$url?>homepage.php";
+            }
+            else {
+                window.history.back();
+            }
+        }
+        else {
+
+            var scoreInput = document.getElementById("scoreInput");
+            var scoreSave = document.getElementById("score");
+
+
+            var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+            console.log(cookieValue);
+
+            console.log(document.cookie);
+
+            document.cookie = 'game_played=false';
+
+            scoreSave.value = cookieValue;
+            scoreInput.value = cookieValue;
+
+        }
+
+    </script>
 
 <?php
 require __DIR__ . "/footer.php";

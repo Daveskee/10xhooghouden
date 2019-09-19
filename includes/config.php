@@ -11,7 +11,7 @@ $dbName = '10xhooghouden';
 $dbUser = 'root';
 $dbPass = '';
 
-$url = 'http://localhost:63342/10xhooghouden2/';
+$url = 'http://localhost/10xhooghouden2/';
 
 $db = new PDO(
     "mysql:host=$dbHost;dbname=$dbName",
@@ -23,3 +23,4 @@ $db->setAttribute(
     PDO::ATTR_ERRMODE,
     PDO::ERRMODE_EXCEPTION
 );
+

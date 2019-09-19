@@ -367,6 +367,11 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
     margin-bottom: 45px;
   }
 
+  .leaderBoardEntry footer {
+    bottom: 0;
+    position: fixed;
+  }
+
 /* ==========================================================================
    difficulties
    ========================================================================== */
@@ -436,7 +441,13 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
   width: 40px;
   font-size: 25px;
 }
+/* ==========================================================================
+   game
+   ========================================================================== */
 
+.game {
+  background-image: url("/img/soccer_field2.jpg");
+}
 
 /*
  * Hide visually and from screen readers

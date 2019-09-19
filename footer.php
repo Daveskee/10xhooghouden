@@ -8,7 +8,9 @@
 ?>
 
 </body>
-<footer>
+<footer class="<?php if(isset($pagefooter)){
+    echo $pagefooter;
+}?>">
     <div class="copy">
         &copy; Projectgroep 10xHooghouden
     </div>
