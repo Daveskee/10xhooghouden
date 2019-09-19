@@ -6,6 +6,7 @@
  * Time: 12:13 PM
  */
 
+$pagefooter = "difficulty";
 require __DIR__ . "/header.php";
 
 ?>
@@ -27,4 +28,10 @@ require __DIR__ . "/header.php";
     </a>
 </div>
 
-<?php require __DIR__ . "/footer.php";
+    <script type="text/javascript">
+        document.cookie = 'letsGoPlay=true'
+    </script>
+
+<?php
+
+require __DIR__ . "/footer.php";

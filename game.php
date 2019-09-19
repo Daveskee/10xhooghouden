@@ -29,6 +29,12 @@ else {
 <script type="text/javascript" src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
 <script type="text/javascript">
 
+    let letsGoPlay = document.cookie.replace(/(?:(?:^|.*;\s*)letsGoPlay\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+    if  (letsGoPlay == 'false'){
+        window.location.href = 'game.php'
+    }
+
     let difficulty = document.getElementById("life_counter").innerText;
     console.log(difficulty);
     var lives;
@@ -141,7 +147,8 @@ else {
                     Crafty.stop();
                     let zero = 0;
                     document.cookie = 'score='+zero;
-                    document.cookie = 'game_played=true'
+                    document.cookie = 'game_played=true';
+                    document.cookie = 'letsGoPlay=false';
                     console.log("i'm here");
                     document.cookie = "score="+score;
 

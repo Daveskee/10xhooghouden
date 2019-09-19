@@ -42,13 +42,8 @@ require __DIR__ . "/header.php";
 
         console.log(gamePlayed);
 
-        if (gamePlayed == "false"){
-            if (history.back() == '<?=$url?>game.php'){
-                window.location.href = "<?=$url?>homepage.php";
-            }
-            else {
-                window.history.back();
-            }
+        if (gamePlayed == "false") {
+            window.history.back();
         }
         else {
 

@@ -372,6 +372,11 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
     position: fixed;
   }
 
+  .difficulty{
+    bottom: 0;
+    position: fixed;
+  }
+
 /* ==========================================================================
    difficulties
    ========================================================================== */
@@ -444,10 +449,6 @@ radial-gradient(ellipse farthest-corner at left top, #c85344 0%, #c85344 8%, #c8
 /* ==========================================================================
    game
    ========================================================================== */
-
-.game {
-  background-image: url("/img/soccer_field2.jpg");
-}
 
 /*
  * Hide visually and from screen readers
