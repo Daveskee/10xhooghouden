@@ -30,7 +30,7 @@ require __DIR__ . "/includes/config.php";
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <img src="https://via.placeholder.com/525x100?text=Visit+Blogging.com+NowC/O https://placeholder.com/" alt="">
+                <img src="./img/logo.png" alt="10x Hooghouden">
             </div>
             <nav class="headnav">
                 <ul class="navbar row-spaced">

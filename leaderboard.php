@@ -45,9 +45,9 @@ foreach ($players as $player){
 echo "</ol>";
 
 ?>
-<div class="yourScore">
-    <?php
-    if (isset($id)) {
+    <div class="yourScore">
+        <?php
+        if (isset($id)) {
             $sql = "SELECT * FROM scores WHERE id = :id";
             $prepare = $db->prepare($sql);
             $prepare->execute([
@@ -66,13 +66,13 @@ echo "</ol>";
             }
         } else {
             echo "<a href='$url/difficulties.php' id='playbtn' class=''>Wanna play?</a>";
-    }
-    ?>
-</div>
+        }
+        ?>
+    </div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-</script>
+    </script>
 
 
 <?php
